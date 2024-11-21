@@ -40,7 +40,7 @@ if upload_file is not None:
     st.header("Show relationship between variables")
     depend_var = st.radio("Choose dependent variable", df.columns)
     for col in list(df.columns):
-        if col in depend_var:
+        if col != depend_var:
             fig, ax = plt.subplots()
             ax.scatter(x=df[col], y=df[depend_var])
             plt.xlabel(col)
